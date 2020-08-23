@@ -21,12 +21,10 @@
   let charCounter =  charArray.reduce((charCounter, currentChar) => {
     charCounter[currentChar] = charCounter[currentChar] + 1 || 1;
     return charCounter;
-  }, {})
+  }, {});
 
-  for (const [char, occurrence] of Object.entries(charCounter)) {
-    occurrence > 1 && console.log(`${char}: ${occurrence}`);
-  }
 
+  return Object.values(charCounter).filter((charInstance) => charInstance > 1).length
  };
  //TEST
  console.log(getDuplicates(`Indivisibilities`));
